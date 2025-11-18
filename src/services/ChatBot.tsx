@@ -1,16 +1,12 @@
-// src/services/ChatBot.tsx
 import React, { useEffect } from "react";
 
 interface ChatBotProps {
   token: string;
   openOnLoad?: boolean;
-  /** How many px to nudge the widget up on mobile */
   mobileNudge?: number;
-  /** How many px to nudge the widget up on desktop */
   desktopNudge?: number;
-  /** breakpoint for mobile */
   mobileBreakpoint?: number;
-  widgetSelector?: string; // optional explicit selector if you know it
+  widgetSelector?: string;
 }
 
 declare global {
@@ -33,18 +29,13 @@ const defaultSelectors = [
 const ChatBot: React.FC<ChatBotProps> = ({
   token,
   openOnLoad = false,
-  mobileNudge = 68,
+  mobileNudge = 60,
   desktopNudge = 10,
   mobileBreakpoint = 480,
   widgetSelector,
 }) => {
   useEffect(() => {
-    if (!token) {
-      console.error("ChatBot: missing token");
-      return;
-    }
-
-    // inject script (if not present)
+    if (!token) return;
     if (!document.getElementById("gallabox-chatty")) {
       (function (w: any, d: Document, s: string, u: string, t: string) {
         w.Chatty = function (c: any) {
@@ -56,145 +47,76 @@ const ChatBot: React.FC<ChatBotProps> = ({
 
         const h = d.getElementsByTagName(s)[0];
         const j = d.createElement(s) as HTMLScriptElement;
+
         j.id = "gallabox-chatty";
         j.async = true;
         j.src =
           "https://widget.gallabox.com/chatty-widget.min.js?_=" + Math.random();
         h.parentNode?.insertBefore(j, h);
       })(window, document, "script", "https://widget.gallabox.com", token);
-    } else if (openOnLoad && typeof window.Chatty === "function") {
-      // try to open if requested
-      try {
-        window.Chatty({ open: true });
-      } catch {
-        try {
-          window.Chatty("show");
-        } catch {}
-      }
     }
-
-    // Expose safe open/close
     window.VsourceOpenChat = () => {
-      try {
-        window.Chatty?.({ open: true });
-      } catch {
-        try {
-          window.Chatty?.("show");
-        } catch {}
-      }
+      window.Chatty?.({ open: true });
     };
+
     window.VsourceCloseChat = () => {
-      try {
-        window.Chatty?.({ open: false });
-      } catch {
-        try {
-          window.Chatty?.("hide");
-        } catch {}
-      }
+      window.Chatty?.({ open: false });
     };
+    const handleClickOutside = (e: MouseEvent) => {
+      const frames = document.querySelectorAll("iframe[src*='gallabox']");
+      for (const frame of frames) {
+        if (frame.contains(e.target as Node)) return; // ignore inside click
+      }
+      window.VsourceCloseChat?.();
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
 
     const selectors = widgetSelector
       ? [widgetSelector, ...defaultSelectors]
       : defaultSelectors;
 
-    // Safely apply a small transform to avoid overlap without altering layout:
-    const applyNudge = (el: HTMLElement, nudgePx: number) => {
-      try {
-        // mark adjusted to avoid repeated changes
-        if (
-          (el.dataset && el.dataset.gbAdjusted) ||
-          el.getAttribute("data-gb-adjusted") === "1"
-        )
-          return;
+    const applyStylesAndNudge = (el: HTMLElement, px: number) => {
+      if (el.dataset.gbAdjusted === "1") return;
 
-        const prevTransform = el.style.transform || "";
-        const translate = ` translateY(-${nudgePx}px)`;
-        el.style.transform = prevTransform.includes("translateY(")
-          ? prevTransform
-          : prevTransform + translate;
-        el.style.zIndex = (
-          Number(el.style.zIndex) > 0 ? el.style.zIndex : 50
-        ).toString();
-        el.style.pointerEvents = "auto";
-
-        el.setAttribute("data-gb-adjusted", "1");
-        // console.info(
-        //   "[ChatBot] adjusted Gallabox element (nudge px):",
-        //   nudgePx,
-        //   el
-        // );
-      } catch (e) {
-        // ignore; keep site stable
+      el.style.transform = `translateY(-${px}px)`;
+      el.style.zIndex = "9999";
+      const isMobile = window.innerWidth <= mobileBreakpoint;
+      if (isMobile) {
+        el.style.height = "70vh";
+        el.style.maxHeight = "70vh";
       }
+
+      el.dataset.gbAdjusted = "1";
     };
 
-    const findAndAdjustOnce = () => {
-      const w = window.innerWidth;
-      const isMobile = w <= mobileBreakpoint;
-      const nudge = isMobile ? mobileNudge : desktopNudge;
+    const adjustOnce = () => {
+      const isMobile = window.innerWidth <= mobileBreakpoint;
+      const px = isMobile ? mobileNudge : desktopNudge;
 
       for (const sel of selectors) {
-        try {
-          const nodes = Array.from(
-            document.querySelectorAll(sel)
-          ) as HTMLElement[];
-          if (nodes.length) {
-            // prefer the first visible node
-            const visible =
-              nodes.find((n) => {
-                const rect = n.getBoundingClientRect();
-                return (
-                  rect.width > 3 &&
-                  rect.height > 3 &&
-                  window.getComputedStyle(n).visibility !== "hidden"
-                );
-              }) || nodes[0];
+        const nodes = document.querySelectorAll(sel);
+        if (!nodes.length) continue;
 
-            // If it's inside an iframe, we adjust the iframe element itself (the host)
-            if (visible.tagName.toLowerCase() === "iframe") {
-              applyNudge(visible, nudge);
-            } else {
-              // apply to the element, and cautiously to its nearest fixed-position ancestor if needed
-              applyNudge(visible, nudge);
-              const fixedAncestor = Array.from(
-                visible.parentElement
-                  ? visible.parentElement.querySelectorAll("*")
-                  : []
-              ).find(
-                (el) =>
-                  window.getComputedStyle(el as Element).position === "fixed"
-              ) as HTMLElement | undefined;
-              if (fixedAncestor) applyNudge(fixedAncestor, nudge);
-            }
-            return true;
-          }
-        } catch (err) {
-          // ignore invalid selectors etc.
-        }
+        const el = nodes[0] as HTMLElement;
+        applyStylesAndNudge(el, px);
+        return true;
       }
       return false;
     };
 
-    // Give the widget some time to load. We'll try a few times but stop quickly to avoid site impact.
     let tries = 0;
-    const maxTries = 12; // ~12 * 500ms = 6s
-    const intervalId = window.setInterval(() => {
-      tries += 1;
-      const ok = findAndAdjustOnce();
-      if (ok || tries >= maxTries) {
-        clearInterval(intervalId);
-      }
-    }, 500);
+    const interval = setInterval(() => {
+      tries++;
+      if (adjustOnce() || tries >= 15) clearInterval(interval);
+    }, 400);
 
-    // Also try once on resize (user rotates phone)
-    const onResize = () => findAndAdjustOnce();
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", adjustOnce);
 
-    // cleanup
     return () => {
-      clearInterval(intervalId);
-      window.removeEventListener("resize", onResize);
-      // do not remove injected script — safe to leave
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", adjustOnce);
+      clearInterval(interval);
     };
   }, [
     token,
