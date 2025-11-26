@@ -130,9 +130,7 @@ const AboutSection: React.FC = () => {
           data-aos-anchor-placement="top-bottom"
         >
           <img
-            src={
-              "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762754020/imgi_5_founder_pcglp8.jpg"
-            }
+            src="/assets/images/founder.webp"
             alt="Founder"
             data-aos="fade-right"
             data-aos-duration="800"
