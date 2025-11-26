@@ -10,9 +10,7 @@ import BannerSkeleton from "@/Loaders/about-us/BannerSkeleton";
 
 export const fetchGallery = async () => {
   const { data } = await axios.get(
-    `${
-      import.meta.env.VITE_CMS_GLOBALURL
-    }/api/gallery?populate[blocks][on][gallery.journey-images][populate][journey_images]=true&populate[blocks][on][gallery.gallery-360][populate]=*`
+    `https://backend.vsourceoverseas.com/api/gallery?populate[blocks][on][gallery.journey-images][populate][journey_images]=true&populate[blocks][on][gallery.gallery-360][populate]=*`
   );
   return data.data || {};
 };

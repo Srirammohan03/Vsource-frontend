@@ -171,9 +171,7 @@ const UniversityDetails: React.FC = () => {
           <div className="w-full md:basis-[40%]  flex flex-col bg-white p-[10px]  shadow">
             <div className="w-full h-full p-3">
               <img
-                src={`${import.meta.env.VITE_CMS_GLOBALURL}${
-                  university?.logo?.url
-                }`}
+                src={`https://backend.vsourceoverseas.com${university?.logo?.url}`}
                 alt={university?.logo?.alternativeText}
                 className="w-full h-full object-contain mb-4"
                 data-aos="zoom-in"
@@ -216,9 +214,7 @@ const UniversityDetails: React.FC = () => {
             // data-aos-anchor-placement="top-bottom"
           >
             <img
-              src={`${import.meta.env.VITE_CMS_GLOBALURL}${
-                university?.banner?.url
-              }`}
+              src={`https://backend.vsourceoverseas.com${university?.banner?.url}`}
               alt={`${university?.name} banner`}
               className="w-full h-full object-cover"
               loading="eager"

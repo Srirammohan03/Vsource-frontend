@@ -53,7 +53,7 @@ const WantTOStudyForm: React.FC = () => {
 
     try {
       const { status } = await axios.post(
-        `${import.meta.env.VITE_CMS_GLOBALURL}/api/enquires`,
+        `https://backend.vsourceoverseas.com/api/enquires`,
         payload
       );
       if (status === 200 || status === 201) {
