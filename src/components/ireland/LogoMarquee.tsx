@@ -62,8 +62,6 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
                 const target = e.target as HTMLImageElement;
                 target.onerror = null;
               }}
-              fetchPriority={idx < 3 ? "high" : "low"}
-              decoding="async"
             />
           </div>
         ))}
@@ -77,40 +75,26 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
 };
 
 const LogoMarquee = () => {
-  // 🇮🇪 Ireland Logos (Set 1)
   const irelandLogos1 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/mtu_nzcq2g.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/ollscil_esowex.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/nci_xgvilr.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/SETU_vcxa6d.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/ollscol_caelht.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/Atlantic.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/dublin.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/dublin.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/dundaik.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/maynooth.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/mtu.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/nci.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/ollscil.png",
   ];
 
-  // 🇮🇪 Ireland Logos (Set 2)
   const irelandLogos2 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/maynooth_cije7g.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/griffith_gm9bzo.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706609/limerick_oqrlpd.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/dundaik_sol9bb.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/ibat_ugljkq.png",
-  ];
-
-  // 🇮🇪 Ireland Logos (Set 3)
-  const irelandLogos3 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/Atlantic_ubiflk.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/dublin_vz84yc.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/University_College_Cork_tbds4a.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/tusmidland_z2c7ye.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/ATU_hjjju9.png",
-  ];
-
-  // 🇮🇪 Ireland Logos (Set 4)
-  const irelandLogos4 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706607/university-college-dublin_njf4pu.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706606/trinity_ks3dcj.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706606/university-of-limerick_dxzf98.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706605/tus_vwlhph.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706604/tollscoil_m0crr3.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/griffith.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/tusmidland.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/ibat.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/limerick.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/SETU.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/tollscoil.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/trinity.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Ireland Universities Logos/University_College_Cork.png",
   ];
 
   return (
@@ -128,8 +112,6 @@ const LogoMarquee = () => {
             <div className="mt-6 md:mt-10 relative overflow-hidden px-2 md:px-4 space-y-4">
               <MarqueeRow logos={irelandLogos1} />
               <MarqueeRow logos={irelandLogos2} reverse />
-              <MarqueeRow logos={irelandLogos3} />
-              <MarqueeRow logos={irelandLogos4} reverse />
             </div>
           </AnimateOnScroll>
 

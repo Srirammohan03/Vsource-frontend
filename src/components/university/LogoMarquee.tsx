@@ -62,8 +62,6 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
                 const target = e.target as HTMLImageElement;
                 target.onerror = null;
               }}
-              decoding="async"
-              fetchPriority={idx < 3 ? "high" : "low"}
             />
           </div>
         ))}
@@ -77,43 +75,51 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
 };
 
 const LogoMarquee = () => {
-  // 🇬🇧 UK Logos (Set 1)
   const ukLogos1 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706162/coventry-university-logo-scaled_jppw86.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706161/Black-Logo_jyb0kz.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706161/cardiff-university_x0fjta.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706160/AU_Birmingham_logo_Purple_RGB_b00brl.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706160/bcu-birmingham-city-university5078_rjeicm.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706160/Heriot-Watt_University_logo.svg-removebg-preview_cyewlq.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/980_university_liverpool_logo-removebg-preview2.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/187302.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/ARU-logo-1440x1080-1-1-1024x768.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/AU_Birmingham_logo_Purple_RGB.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/bcu-birmingham-city-university5078.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/Black-Logo.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/cardiff-university.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/coventry-university-logo-scaled.jpg",
   ];
 
-  // 🇬🇧 UK Logos (Set 2)
   const ukLogos2 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706162/images_3_n1nq6l.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706162/download_1_wzjwjn.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706161/download_2_x6lwap.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706161/images_2_syfvrd.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706161/images_2_mavkir.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706160/images_1_pbwhxj.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/download.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/download (1).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/download (2).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/download (8).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/Heriot-Watt_University_logo.svg.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (1).jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (1).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (2).jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (2).png",
   ];
 
-  // 🇬🇧 UK Logos (Set 3)
   const ukLogos3 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706158/187302_dncwat.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706158/ARU-logo-1440x1080-1-1-1024x768_zoqhg2.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706158/1551096064_brandmark_rgb_colourway-1_jd4cpg.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/980_university_liverpool_logo-removebg-preview2_n5tz6e.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/Edinburgh_Napier_University_f1szhs.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (3).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (4).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (15).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images (17).png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/images.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/logo_big.gif",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/logo-bpp-university.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/Media_703659_smxx.webp",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/nottingham-trent-university-logo-square.png",
   ];
 
-  // 🇬🇧 UK Logos (Set 4 – additional, reserved for expansion if needed)
   const ukLogos4 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/ARU-logo-1440x1080-1-1_rxd2ag.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/avg07l8ep_ni8ned.webp",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/download_pu3xvf.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/download_8_fxoi5g.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/images_1_fniupj.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/Heriot-Watt_University_logo.svg_eju2ub.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/the-university-of-south-wales-logo-6642E297DF-seeklogo.com.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/TU.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/University_of_Leicester_logo_pillars.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/University_of_Roehampton_logo.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/University_of_Edinburgh-Logo.wine.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/University_of_Essex_logo-removebg-preview.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/university-bpp.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/university-of-chester.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/university-of-east-anglia-logo.png",
   ];
 
   return (
