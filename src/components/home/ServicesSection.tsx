@@ -6,31 +6,25 @@ const services = [
     title: "BTECH",
     description:
       "Igniting Your Journey To Engineering Excellence\nIn CSE (AI/ML)",
-    imageSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762838677/nvguj2wwnuelquy8gkug.jpg",
+    imageSrc: "/assets/images/badges/btech.jpeg",
     externalUrl: "https://vsourcevarsity.com/",
-    logoSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762771591/logo_varsity_xjqqz3.png",
+    logoSrc: "/assets/images/badges/logo varsity.png",
   },
   {
     title: "MBBS IN ABROAD",
     description:
       "Affordable, Globally Recognized\n MBBS Abroad\nGeorgia | Russia",
-    imageSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762838677/yaaywm5vxfcn7kn7s9ht.jpg",
+    imageSrc: "/assets/images/badges/mbbs.webp",
     externalUrl: "https://vsourceadmissions.com/",
-    logoSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762771591/mini_logo_wpxcjg.png",
+    logoSrc: "/assets/images/badges/mini logo.png",
   },
   {
     title: "EDU LOAN",
     description:
       "100% EDUCATION LOAN\nFOR BTECH IN NAAC A, A+, A++\nFOR MASTER IN US | UK | IRELAND | CANADA | FRANCE",
-    imageSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762838677/at0pt6epbrgf05mh5v27.jpg",
+    imageSrc: "/assets/images/badges/edu.webp",
     externalUrl: "https://www.vsourcefintech.com/",
-    logoSrc:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762771591/logo_fintech_ltykou.png",
+    logoSrc: "/assets/images/badges/logo fintech.png",
   },
 ];
 

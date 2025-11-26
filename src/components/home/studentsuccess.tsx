@@ -8,9 +8,7 @@ import { toast } from "sonner";
 
 export const fetchStudents = async () => {
   const { data } = await axios.get(
-    `${
-      import.meta.env.VITE_CMS_GLOBALURL
-    }/api/gallery?populate[blocks][on][gallery.student-images][populate][students_images]=true`
+    `https://backend.vsourceoverseas.com/api/gallery?populate[blocks][on][gallery.student-images][populate][students_images]=true`
   );
   return data.data.blocks[0] || {};
 };

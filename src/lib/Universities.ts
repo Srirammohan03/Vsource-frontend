@@ -167,9 +167,7 @@ export interface Tab {
 }
 
 export const fetchExploreUniversities = async (page = 1, country = "All") => {
-  let baseUrl = `${
-    import.meta.env.VITE_CMS_GLOBALURL
-  }/api/uni-directories?populate[logo][fields][0]=url&populate[logo][fields][1]=documentId&populate[logo][fields][2]=name&populate[banner][fields][0]=url&populate[banner][fields][1]=documentId&populate[banner][fields][2]=name&pagination[page]=${page}&pagination[pageSize]=12`;
+  let baseUrl = `https://backend.vsourceoverseas.com/api/uni-directories?populate[logo][fields][0]=url&populate[logo][fields][1]=documentId&populate[logo][fields][2]=name&populate[banner][fields][0]=url&populate[banner][fields][1]=documentId&populate[banner][fields][2]=name&pagination[page]=${page}&pagination[pageSize]=12`;
 
   if (country !== "All") {
     baseUrl += `&filters[country][$in][0]=${country}`;
@@ -190,9 +188,7 @@ export const fetchExploreUniversities = async (page = 1, country = "All") => {
 
 export const fetchUniversitiesByDocumentId = async (documentId: string) => {
   const { data } = await axios.get(
-    `${
-      import.meta.env.VITE_CMS_GLOBALURL
-    }/api/uni-directories/${documentId}?populate[logo][fields][0]=url&populate[logo][fields][1]=documentId&populate[logo][fields][2]=name&populate[banner][fields][0]=url&populate[banner][fields][1]=documentId&populate[banner][fields][2]=name&populate[overview]=true&populate[stats]=true&populate[rankings][populate][items]=true&populate[intakes][populate][famous_intakes]=true&populate[courses][populate][famous_courses]=true&populate[cost_of_study][populate][expenses_table]=true&populate[scholarship][populate][scholarship_details]=true&populate[admissions][populate][admissions_req][populate][requirement_items]=true&populate[placements][populate][jobs]=true&populate[placements][populate][top_recruiters_imgs][fields][0]=url&populate[placements][populate][top_recruiters_imgs][fields][1]=documentId&populate[placements][populate][top_recruiters_imgs][fields][2]=name&populate[gallerys][fields][0]=url&populate[gallerys][fields][1]=documentId&populate[gallerys][fields][2]=name&populate[faqs][populate][accordion]=true`
+    `https://backend.vsourceoverseas.com/api/uni-directories/${documentId}?populate[logo][fields][0]=url&populate[logo][fields][1]=documentId&populate[logo][fields][2]=name&populate[banner][fields][0]=url&populate[banner][fields][1]=documentId&populate[banner][fields][2]=name&populate[overview]=true&populate[stats]=true&populate[rankings][populate][items]=true&populate[intakes][populate][famous_intakes]=true&populate[courses][populate][famous_courses]=true&populate[cost_of_study][populate][expenses_table]=true&populate[scholarship][populate][scholarship_details]=true&populate[admissions][populate][admissions_req][populate][requirement_items]=true&populate[placements][populate][jobs]=true&populate[placements][populate][top_recruiters_imgs][fields][0]=url&populate[placements][populate][top_recruiters_imgs][fields][1]=documentId&populate[placements][populate][top_recruiters_imgs][fields][2]=name&populate[gallerys][fields][0]=url&populate[gallerys][fields][1]=documentId&populate[gallerys][fields][2]=name&populate[faqs][populate][accordion]=true`
   );
   return data.data;
 };
