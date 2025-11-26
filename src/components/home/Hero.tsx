@@ -55,7 +55,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{
-            backgroundImage: `url(https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_1920,c_limit,dpr_auto/v1762706393/home-bg_lmooii.webp)`,
+            backgroundImage: "url('/assets/images/vsource 1.png')",
           }}
         />
         <div className="absolute inset-0 bg-grey opacity-30 z-10 mix-blend-overlay" />
@@ -67,16 +67,14 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_768,c_limit,dpr_auto/v1762706392/girl-mobile_jdl10b.webp)`,
+          backgroundImage: "url('/assets/images/SLIDER nn-01.png')",
         }}
       />
 
       {/* Right-side Girl Image (Hidden on Mobile) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-10 hidden md:flex justify-end">
         <motion.img
-          src={
-            "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_1200,c_limit,dpr_auto/v1762706393/vsource_o2hkq0.webp"
-          }
+          src="/assets/images/vsource.png"
           alt="Girl"
           initial={{ y: "60%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
@@ -132,9 +130,7 @@ const Hero = () => {
               className="flex justify-start pt-6"
             >
               <img
-                src={
-                  "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_400,c_limit,dpr_auto/v1762702830/20-years-logo_be7aro.webp"
-                }
+                src="/assets/images/20 years logo.png"
                 alt="20 Years Logo"
                 className="w-36 h-auto"
                 loading="lazy"
@@ -217,7 +213,7 @@ const Hero = () => {
                 {["fr", "us", "ie", "ca", "gb"].map((flag, idx) => (
                   <img
                     key={idx}
-                    src={flagUrls[flag]}
+                    src={`https://flagcdn.com/${flag}.svg`}
                     alt={flag.toUpperCase()}
                     className="w-4 h-4 object-cover rounded-full"
                     loading="lazy"
@@ -237,9 +233,7 @@ const Hero = () => {
                 APPLY NOW
               </motion.button>
               <img
-                src={
-                  "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_200,c_limit,dpr_auto/fl_lossy,e_sharpen/v1762702830/20-years-logo_be7aro.webp"
-                }
+                src="/assets/images/20 years logo.png"
                 alt="20 Years Logo"
                 className="w-20 h-auto mt-4 "
                 loading="eager"

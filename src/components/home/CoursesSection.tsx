@@ -19,8 +19,7 @@ const courseCategories: Course[] = [
       "Home to Top World-Ranking Universities",
       "Wide Range of Scholarships & Financial Assistance",
     ],
-    image:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762705950/uk_t9dc3s.webp",
+    image: "/assets/images/badges/uk.png",
     url: "https://vsourcevarsity.com/",
   },
   {
@@ -30,8 +29,7 @@ const courseCategories: Course[] = [
       "#1 Destination for Top-Ranked Institutions",
       "Extensive Scholarships & Financial Support",
     ],
-    image:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762705953/usa_uf4f16.webp",
+    image: "/assets/images/badges/usa.png",
     url: "https://vsourcevarsity.com/",
   },
   {
@@ -42,8 +40,7 @@ const courseCategories: Course[] = [
       "Work Opportunities & Post-Study Work Permits",
       "Scholarships and Financial Aid for International Students",
     ],
-    image:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762705935/canada_jt1dc7.webp",
+    image: "/assets/images/badges/canada.png",
     url: "https://vsourcevarsity.com/",
   },
   {
@@ -54,8 +51,7 @@ const courseCategories: Course[] = [
       "Gateway to Europe with Post-Study Work Options",
       "Scholarships & Financial Support Available",
     ],
-    image:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762705976/ireland_v69csu.webp",
+    image: "/assets/images/badges/ireland.png",
     url: "https://vsourcevarsity.com/",
   },
   {
@@ -66,8 +62,7 @@ const courseCategories: Course[] = [
       "Affordable Education with Rich Cultural Experience",
       "Scholarships & Financial Assistance for International Students",
     ],
-    image:
-      "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762705947/france_lru1rl.webp",
+    image: "/assets/images/badges/france.png",
     url: "https://vsourcevarsity.com/",
   },
 ];
