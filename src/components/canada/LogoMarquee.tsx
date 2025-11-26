@@ -62,8 +62,6 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
                 const target = e.target as HTMLImageElement;
                 target.onerror = null;
               }}
-              fetchPriority={idx < 3 ? "high" : "low"}
-              decoding="async"
             />
           </div>
         ))}
@@ -77,40 +75,29 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
 };
 
 const LogoMarquee = () => {
-  // 🇨🇦 Canada Logos (Set 1)
   const canadaLogos1 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706590/algoma_dg1spg.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706589/UCalgary_f8xn7b.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706589/regina_u3nvqt.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706589/sfu_w4jhf6.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706589/toronto2_aecw39.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/alberta.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/algoma.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/brunswick.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/vancouver.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/lakehead.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/laurentian.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/niagara.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/NYIT.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/windsor.jpg",
   ];
 
-  // 🇨🇦 Canada Logos (Set 2)
   const canadaLogos2 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/NYIT_p7wh07.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/niagara_bpkxfd.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/laurentian_wcjq12.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/fairleigh_epfo5m.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/lakehead_ti6eyo.png",
-  ];
-
-  // 🇨🇦 Canada Logos (Set 3)
-  const canadaLogos3 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/ibu_cp7aou.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706587/columbia_iic31u.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706587/Algoma_University_wordmark.svg_mrhchq.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706587/dalhousie_wkwdqn.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706586/York_jmtgxc.png",
-  ];
-
-  // 🇨🇦 Canada Logos (Set 4)
-  const canadaLogos4 = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706586/brunswick_klqrtn.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706586/Waterloo_mu4vuy.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706586/alberta_gxxb6l.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706585/windsor_zxf88y.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706585/vancouver_npgk4r.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/columbia.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/dalhousie.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/fairleigh.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/ibu.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/Waterloo.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/regina.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/sfu.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/toronto2.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/UCalgary.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/York.png",
   ];
 
   return (
@@ -128,8 +115,6 @@ const LogoMarquee = () => {
             <div className="mt-6 md:mt-10 relative overflow-hidden px-2 md:px-4 space-y-4">
               <MarqueeRow logos={canadaLogos1} />
               <MarqueeRow logos={canadaLogos2} reverse />
-              <MarqueeRow logos={canadaLogos3} />
-              <MarqueeRow logos={canadaLogos4} reverse />
             </div>
           </AnimateOnScroll>
 
