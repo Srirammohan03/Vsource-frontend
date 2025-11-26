@@ -77,7 +77,7 @@ const AboutPage: React.FC = () => {
       <section
         className="pt-40 pb-36 bg-cover bg-center bg-no-repeat relative text-white"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762707348/about-banner_dgscgs.webp)`,
+          backgroundImage: `url(/assets/images/about-banner.webp)`,
         }}
       >
         {/* Dark overlay */}
