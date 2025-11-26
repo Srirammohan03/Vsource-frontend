@@ -6,21 +6,21 @@ const stats = [
     value: 100000,
     suffix: "+",
     label: "Students Empowered",
-    icon: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762770342/hat_phpbum.gif",
+    icon: "https://cdn-icons-gif.flaticon.com/6454/6454106.gif",
   },
   {
     id: 2,
     value: 20,
     suffix: "+",
     label: "Years of\nExperience",
-    icon: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762770342/handshake_ewjcsn.gif",
+    icon: "https://cdn-icons-gif.flaticon.com/15370/15370761.gif",
   },
   {
     id: 3,
     value: 10,
     suffix: "+",
     label: "Study Destinations",
-    icon: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762770342/earth_vhzkro.gif",
+    icon: "https://cdn-icons-gif.flaticon.com/15747/15747340.gif",
   },
 ];
 
@@ -140,7 +140,7 @@ const AboutSection: React.FC = () => {
             data-aos-duration="2000"
           >
             <img
-              src="https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762754020/imgi_5_founder_pcglp8.jpg"
+              src="/assets/images/founder.webp"
               alt="Founder"
               className="founder-img"
             />

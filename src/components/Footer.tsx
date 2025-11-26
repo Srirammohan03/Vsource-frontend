@@ -21,22 +21,22 @@ const Footer = () => {
               {[
                 {
                   href: "https://www.facebook.com/share/Up9qaiBuTj25dG5z/?mibextid=qi2Omg",
-                  src: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto,fl_lossy,e_sharpen/v1762755430/fb_gdlsay.png",
+                  src: "/assets/images/icons/fb.webp",
                   alt: "Facebook",
                 },
                 {
                   href: "https://www.instagram.com/vsource_overseas/?igsh=M2dmemcwaHU5eHJy",
-                  src: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto,fl_lossy,e_sharpen/v1762755430/insta_zm9azg.png",
+                  src: "/assets/images/icons/insta.webp",
                   alt: "Instagram",
                 },
                 {
                   href: "https://www.youtube.com/channel/UCNVjrnqI9L873rkB-5_p4kA",
-                  src: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto,fl_lossy,e_sharpen/v1762755431/yt_pjpcex.png",
+                  src: "/assets/images/icons/yt.webp",
                   alt: "YouTube",
                 },
                 {
                   href: "https://in.linkedin.com/company/vsource-educational-consultants",
-                  src: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto,fl_lossy,e_sharpen/v1762755430/linked_in_angejo.png",
+                  src: "/assets/images/icons/linked in.webp",
                   alt: "LinkedIn",
                 },
               ]?.map((icon, index) => (

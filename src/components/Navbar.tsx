@@ -47,31 +47,11 @@ const Navbar = () => {
   ];
 
   const destinations = [
-    {
-      name: "Study in UK",
-      path: "/study-in-uk",
-      flag: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto/v1762750992/gb_yh7gf7.png",
-    },
-    {
-      name: "Study in USA",
-      path: "/study-in-usa",
-      flag: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto/v1762750978/us_lvrj48.png",
-    },
-    {
-      name: "Study in CANADA",
-      path: "/study-in-canada",
-      flag: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto/v1762750955/ca_xwmgsp.png",
-    },
-    {
-      name: "Study in IRELAND",
-      path: "/study-in-ireland",
-      flag: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto/v1762751001/ie_tm70sc.png",
-    },
-    {
-      name: "Study in FRANCE",
-      path: "/study-in-france",
-      flag: "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_64,h_64,c_limit,dpr_auto/v1762751009/fr_vn6lrw.png",
-    },
+    { name: "Study in UK", path: "/study-in-uk", flag: "gb" },
+    { name: "Study in USA", path: "/study-in-usa", flag: "us" },
+    { name: "Study in CANADA", path: "/study-in-canada", flag: "ca" },
+    { name: "Study in IRELAND", path: "/study-in-ireland", flag: "ie" },
+    { name: "Study in FRANCE", path: "/study-in-france", flag: "fr" },
   ];
 
   const linkColor = (path: string) =>
@@ -94,15 +74,11 @@ const Navbar = () => {
           <img
             alt="Vsource Logo"
             className="h-16 md:h-20 w-auto object-contain rounded-xl shadow-md"
-            src={
-              "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_200,c_limit,dpr_auto/v1762706238/vsource-logo_oofetg.webp"
-            }
+            src="/assets/images/red vs logo.PNG"
           />
           <div>
             <img
-              src={
-                "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_200,c_limit,dpr_auto/v1762706239/nav-badge20years_re4asz.webp"
-              }
+              src="/assets/images/20 years logo-01.png"
               alt="20 Years Logo"
               className="h-20 md:h-18 ml-3 w-auto object-contain drop-shadow-md"
             />
@@ -165,7 +141,7 @@ const Navbar = () => {
                     className="flex items-center gap-3 group"
                   >
                     <img
-                      src={d?.flag}
+                      src={`https://flagcdn.com/w40/${d.flag}.png`}
                       alt={d.name}
                       className="w-6 h-4 rounded-sm shadow-sm"
                       loading="lazy"
@@ -281,7 +257,7 @@ const Navbar = () => {
                       className="flex items-center gap-3 py-1.5"
                     >
                       <img
-                        src={d?.flag}
+                        src={`https://flagcdn.com/w40/${d.flag}.png`}
                         alt={d.name}
                         className="w-6 h-4 rounded-sm shadow"
                         loading="lazy"

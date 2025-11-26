@@ -2,10 +2,6 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { User, GraduationCap, IndianRupee, MapPin } from "lucide-react";
-import dedicatedImage from "@/assets/homepage/Dedicated_Counsellor.webp";
-import loadnImage from "@/assets/homepage/Loan_Assistance.webp";
-import accImage from "@/assets/homepage/accommodation-food.webp";
-import preImage from "@/assets/homepage/pre-post-landing.webp";
 
 interface Service {
   icon: JSX.Element;
@@ -16,8 +12,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    backgroundImage:
-      "https://res.cloudinary.com/dch00stdh/image/upload/v1762706926/Dedicated_Counsellor_mypjj8.webp",
+    backgroundImage: "/assets/images/Trusted-section/Dedicated_Counsellor.webp",
     icon: <User size={40} color="#ffffff" />,
     title: "Dedicated Counsellor",
     description:
@@ -25,15 +20,14 @@ const services: Service[] = [
   },
   {
     backgroundImage:
-      "https://res.cloudinary.com/dch00stdh/image/upload/v1762706925/accommodation-food_suedpf.webp",
+      "/assets/images/Trusted-section/admission-documentation.webp",
     icon: <GraduationCap size={40} color="#ffffffff" />,
     title: "Universities Shortlisting",
     description:
       "We assist in selecting the best-fit universities based on your academic goals and preferences",
   },
   {
-    backgroundImage:
-      "https://res.cloudinary.com/dch00stdh/image/upload/v1762706929/Loan_Assistance_u5idg4.webp",
+    backgroundImage: "/assets/images/Trusted-section/accommodation-food.webp",
     icon: <IndianRupee size={40} color="#ffffffff" />,
     title: "Loan Assistance",
     description:
@@ -41,7 +35,7 @@ const services: Service[] = [
   },
   {
     backgroundImage:
-      "https://res.cloudinary.com/dch00stdh/image/upload/v1762706937/pre-post-landing_rk8hka.webp",
+      "/assets/images/Trusted-section/Pre_&_Post_Landing_Support.webp",
     icon: <MapPin size={40} color="#ffffffff" />,
     title: "Pre & Post Landing Support",
     description:
@@ -59,7 +53,11 @@ const OurServices: React.FC = () => {
 
   return (
     <section style={styles.section}>
-      <h2 style={styles.title} data-aos="fade-up">
+      <h2
+        style={styles.title}
+        data-aos-anchor-placement="center-bottom"
+        data-aos="zoom-in"
+      >
         Our Services
       </h2>
       <div className="scroll-container">
@@ -68,20 +66,41 @@ const OurServices: React.FC = () => {
             key={index}
             className="service-card"
             data-aos="fade-up"
+            data-aos-delay={index * 100}
             style={{
               backgroundImage: ` url(${service.backgroundImage})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition:
+                index === services.length - 1 ? "center 15%" : "center",
             }}
           >
-            <div className="absolute inset-0 bg-black/60 rounded-[16px]"></div>
+            <div className="absolute inset-0 bg-black/50 rounded-[16px]"></div>
             <div className="relative z-10 flex flex-col items-center text-white">
-              <div className="icon-wrapper mb-4">{service.icon}</div>
-              <h3 className="text-lg font-bold mb-2 text-blue-500">
+              <div
+                className="icon-wrapper mb-4"
+                data-aos="fade-right"
+                data-aos-delay={index * 200}
+                data-aos-anchor-placement="center-bottom"
+              >
+                {service.icon}
+              </div>
+              <h3
+                className="text-lg font-bold mb-2 text-blue-500"
+                data-aos="fade-right"
+                data-aos-delay={index * 200}
+                data-aos-anchor-placement="center-bottom"
+              >
                 {service.title}
               </h3>
-              <p className="text-sm">{service.description}</p>
+              <p
+                className="text-sm"
+                data-aos="fade-right"
+                data-aos-delay={index * 200}
+                data-aos-anchor-placement="center-bottom"
+              >
+                {service.description}
+              </p>
             </div>
           </div>
         ))}
