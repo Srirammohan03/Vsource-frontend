@@ -87,11 +87,13 @@ const App = () => {
         <ScrollToTop />
 
         <div className="flex flex-col min-h-screen">
-          {!shouldHideLayout && <Navbar />}
+          {/* {!shouldHideLayout && <Navbar />} */}
 
           <main className="flex-grow">
             <Suspense fallback={<AppSkeleton />}>
               <Routes>
+                <Route path="/" element={<MaintenancePage />} />
+                {/* 
                 <Route path="/" element={<HomePage faqRef={faqRef} />} />
                 <Route path="/about-us" element={<AboutPage />} />
                 <Route path="/study-in-uk" element={<StudyUKPage />} />
@@ -114,28 +116,28 @@ const App = () => {
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/join-us" element={<JoinUsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/maintenance" element={<MaintenancePage />} />
-                <Route path="/view-360" element={<View360 />} />
-                <Route path="*" element={<NotFound />} />
+                 <Route path="/maintenance" element={<MaintenancePage />} /> 
+                 <Route path="/view-360" element={<View360 />} />
+                <Route path="*" element={<NotFound />} /> */}
               </Routes>
             </Suspense>
           </main>
-
+          {/* 
           {!shouldHideLayout && <ContactBar />}
-          {!shouldHideLayout && <Footer />}
+          {!shouldHideLayout && <Footer />} */}
         </div>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           {!shouldHideLayout && (
             <ChatBot
               token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0Ijoid3d3LnZzb3VyY2VvdmVyc2Vhcy5jb20iLCJpZCI6IjY3NmZlMzQ3Yzk3NTFkMmFhNWNkZTQ5NyIsImFjY0lkIjoiNjZiZjVjNjUzNTIzZmIxNjhjYzBkZTFlIiwiaWF0IjoxNzU4ODAzNjQ0fQ.8q-5u03q7aBSWYp_PcMzZIMZgPxtfc2eH76oWzlx7rU"
               mobileNudge={48}
             />
           )}
-        </Suspense>
+        </Suspense> */}
 
         {/* Floating Buttons */}
-        {!shouldHideLayout && (
+        {/* {!shouldHideLayout && (
           <ScrollToTopButton
             showFormIcon={showFormIcon}
             chatbotNudge={120}
@@ -144,16 +146,16 @@ const App = () => {
               setShowFormIcon(false);
             }}
           />
-        )}
+        )} */}
 
-        {!shouldHideLayout && showForm && (
+        {/* {!shouldHideLayout && showForm && (
           <DelayedPopup
             onMinimize={() => {
               setShowForm(false);
               setShowFormIcon(true);
             }}
           />
-        )}
+        )} */}
       </TooltipProvider>
     </QueryClientProvider>
   );
