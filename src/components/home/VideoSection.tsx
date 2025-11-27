@@ -34,7 +34,7 @@ const VideoSection = () => {
                 onClick={handlePlay}
               >
                 <img
-                  src="/assets/images/branches/company.jpg"
+                  src="/assets/images/branches/company.webp"
                   alt="Company Video Thumbnail"
                   className="w-full h-full object-cover"
                 />
