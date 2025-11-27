@@ -78,28 +78,38 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ logos, reverse = false }) => {
 
 const LogoMarquee = () => {
   const usLogos = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/NYIT_p7wh07.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/niagara_bpkxfd.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/laurentian_wcjq12.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/fairleigh_epfo5m.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706588/lakehead_ti6eyo.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/02_WRIGHTSTATE_BIPLANE_N_FULL.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/academy-of-art-university.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/arizona-state-university.webp",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/auburn-at-montgomery.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/A-State_Stack_2C_Light.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/attend-western.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/belltower.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/buffalo.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/USA Universities Logos/california.png",
   ];
 
   const ukLogos = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/Atlantic_ubiflk.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/dublin_vz84yc.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/University_College_Cork_tbds4a.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/tusmidland_z2c7ye.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706608/ATU_hjjju9.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/980_university_liverpool_logo-removebg-preview2.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/187302.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/ARU-logo-1440x1080-1-1-1024x768.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/AU_Birmingham_logo_Purple_RGB.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/bcu-birmingham-city-university5078.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/Black-Logo.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/cardiff-university.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/coventry-university-logo-scaled.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/uk universities logos/download.png",
   ];
 
   const btechLogos = [
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/ARU-logo-1440x1080-1-1_rxd2ag.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/avg07l8ep_ni8ned.webp",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/download_pu3xvf.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706157/download_8_fxoi5g.png",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/images_1_fniupj.jpg",
-    "https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto,w_300,c_limit/v1762706159/Heriot-Watt_University_logo.svg_eju2ub.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/alberta.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/algoma.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/brunswick.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/columbia.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/dalhousie.png",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/fairleigh.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/ibu.jpg",
+    "/assets/images/LOGOS OF COUNTRIES WISE UNIVERSITIES/Canada Universities Logos/lakehead.png",
   ];
 
   // const mbbsLogos = [
