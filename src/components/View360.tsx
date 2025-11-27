@@ -44,75 +44,79 @@ const View360 = () => {
 
       {/* Tabs Section */}
       <section className="py-16 md:py-16 text-center">
-        {/* Tabs */}
-        <div className="inline-flex bg-gray-100 rounded-lg p-1">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                activeTab === tab
-                  ? "bg-white shadow-sm text-primary"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
-            >
-              {tab === "all" ? "All" : tab}
-            </button>
-          ))}
-        </div>
+        <div className="container mx-auto px-4">
+          {/* Tabs */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex bg-gray-100 rounded-lg p-1">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    activeTab === tab
+                      ? "bg-white shadow-sm text-primary"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {tab === "all" ? "All" : tab}
+                </button>
+              ))}
+            </div>
+          </div>
 
-        {/* All Offices View */}
-        {activeTab === "all" && (
-          <section className="mt-12">
-            {/* <SectionTitle
+          {/* All Offices View */}
+          {activeTab === "all" && (
+            <section className="mt-12">
+              {/* <SectionTitle
               title="Virtual Office Tours"
               subtitle="Take a 360° tour of our main offices across India"
             /> */}
-            <AnimateOnScroll>
-              <div className="mt-10 max-w-4xl mx-auto">
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <iframe
-                      src="https://vsourceadmissions.com/360View/"
-                      title="All Offices Virtual Tour"
-                      className="w-full h-full border-0 rounded-lg"
-                      allow="accelerometer; gyroscope; fullscreen"
-                      allowFullScreen
-                      loading="lazy"
-                    />
+              <AnimateOnScroll>
+                <div className="mt-10 max-w-4xl mx-auto">
+                  <div className="bg-white p-6 rounded-xl shadow-md">
+                    <div className="relative aspect-video overflow-hidden rounded-lg">
+                      <iframe
+                        src="https://vsourceadmissions.com/360View/"
+                        title="All Offices Virtual Tour"
+                        className="w-full h-full border-0 rounded-lg"
+                        allow="accelerometer; gyroscope; fullscreen"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
-          </section>
-        )}
+              </AnimateOnScroll>
+            </section>
+          )}
 
-        {/* Individual Office View */}
-        {activeTab !== "all" && (
-          <section className="mt-12">
-            <SectionTitle
-              title={locations[activeTab].title}
-              subtitle={locations[activeTab].subtitle}
-            />
-            <AnimateOnScroll>
-              <div className="mt-10 max-w-4xl mx-auto">
-                <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="relative aspect-video overflow-hidden rounded-lg">
-                    <iframe
-                      src={locations[activeTab].src}
-                      title={`${activeTab} 360° View`}
-                      className="w-full h-full border-0 rounded-lg"
-                      allow="accelerometer; gyroscope; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+          {/* Individual Office View */}
+          {activeTab !== "all" && (
+            <section className="mt-12">
+              <SectionTitle
+                title={locations[activeTab].title}
+                subtitle={locations[activeTab].subtitle}
+              />
+              <AnimateOnScroll>
+                <div className="mt-10 max-w-4xl mx-auto">
+                  <div className="bg-white p-6 rounded-xl shadow-md">
+                    <div className="relative aspect-video overflow-hidden rounded-lg">
+                      <iframe
+                        src={locations[activeTab].src}
+                        title={`${activeTab} 360° View`}
+                        className="w-full h-full border-0 rounded-lg"
+                        allow="accelerometer; gyroscope; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
-          </section>
-        )}
+              </AnimateOnScroll>
+            </section>
+          )}
+        </div>
       </section>
     </div>
   );
