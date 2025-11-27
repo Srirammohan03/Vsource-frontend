@@ -387,7 +387,7 @@ function JobsIncanadaFlow({ students_expriences }: Prop) {
             )?.map((src, idx) => (
               <img
                 key={src?.id || idx}
-                src={src?.url}
+                src={`https://backend.vsourceoverseas.com${src?.url}`}
                 alt="Alumni"
                 className="w-20 h-20 rounded-full object-cover border-2 border-white shadow-md"
               />
@@ -401,7 +401,7 @@ function JobsIncanadaFlow({ students_expriences }: Prop) {
             )?.map((src, idx) => (
               <img
                 key={src?.id || idx}
-                src={src?.url}
+                src={`https://backend.vsourceoverseas.com${src?.url}`}
                 alt="Alumni"
                 className={`circle-img circle-${idx + 1}`}
               />
