@@ -405,7 +405,7 @@ const UniversityDetails: React.FC = () => {
                   {/* Icon */}
                   <div className="flex-shrink-0 flex items-center justify-center w-20 h-20">
                     <img
-                      src="https://res.cloudinary.com/dch00stdh/image/upload/f_auto,q_auto/v1762773790/star_msmg3k.gif"
+                      src="/assets/images/star.gif"
                       alt=""
                       className="object-none"
                     />

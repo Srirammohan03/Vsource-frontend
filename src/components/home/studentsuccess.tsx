@@ -55,9 +55,7 @@ const StudentWall = () => {
             students?.students_images?.map((img, index) => (
               <img
                 key={img?.id || index}
-                src={
-                  img?.formats?.small?.url ? img?.formats?.small?.url : img?.url
-                }
+                src={`https://backend.vsourceoverseas.com${img?.url}`}
                 alt={`Student ${index + 1}`}
                 loading="lazy"
                 decoding="async"

@@ -21,7 +21,7 @@ function HeroBanner({ title, banner }: Props) {
     >
       {/* Responsive image instead of CSS background */}
       <img
-        src={banner?.url || null}
+        src={`https://backend.vsourceoverseas.com${banner?.url}`}
         alt=""
         aria-hidden="true"
         className="

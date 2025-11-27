@@ -55,7 +55,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{
-            backgroundImage: "url('/assets/images/vsource 1.png')",
+            backgroundImage: "url('/assets/images/vsource 1.webp')",
           }}
         />
         <div className="absolute inset-0 bg-grey opacity-30 z-10 mix-blend-overlay" />
@@ -67,14 +67,14 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         style={{
-          backgroundImage: "url('/assets/images/SLIDER nn-01.png')",
+          backgroundImage: "url('/assets/images/SLIDER nn-01.webp')",
         }}
       />
 
       {/* Right-side Girl Image (Hidden on Mobile) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-10 hidden md:flex justify-end">
         <motion.img
-          src="/assets/images/vsource.png"
+          src="/assets/images/vsource.webp"
           alt="Girl"
           initial={{ y: "60%", opacity: 0 }}
           animate={{ y: "0%", opacity: 1 }}
@@ -130,7 +130,7 @@ const Hero = () => {
               className="flex justify-start pt-6"
             >
               <img
-                src="/assets/images/20 years logo.png"
+                src="/assets/images/20 years logo.webp"
                 alt="20 Years Logo"
                 className="w-36 h-auto"
                 loading="lazy"
@@ -233,7 +233,7 @@ const Hero = () => {
                 APPLY NOW
               </motion.button>
               <img
-                src="/assets/images/20 years logo.png"
+                src="/assets/images/20 years logo.webp"
                 alt="20 Years Logo"
                 className="w-20 h-auto mt-4 "
                 loading="eager"

@@ -6,7 +6,7 @@ const services = [
     title: "BTECH",
     description:
       "Igniting Your Journey To Engineering Excellence\nIn CSE (AI/ML)",
-    imageSrc: "/assets/images/badges/btech.jpeg",
+    imageSrc: "/assets/images/badges/btech.webp",
     externalUrl: "https://vsourcevarsity.com/",
     logoSrc: "/assets/images/badges/logo varsity.png",
   },

@@ -19,7 +19,7 @@ const UniversityGallery: React.FC<UniversityGalleryProps> = ({ items }) => {
           `}
         >
           <img
-            src={image?.url}
+            src={`https://backend.vsourceoverseas.com${image?.url}`}
             alt={`Gallery image ${index + 1}`}
             className="w-full h-full object-cover"
           />

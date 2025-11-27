@@ -104,7 +104,7 @@ function CityCostsTabs({ living_Cost_Tuition_Fee }: Prop) {
           {activeCity.image && (
             <div className="mt-6 rounded-xl overflow-hidden shadow-lg ring-1 ring-gray-200/70">
               <img
-                src={activeCity.image.url || null}
+                src={`https://backend.vsourceoverseas.com${activeCity.image.url}`}
                 alt={activeCity.city}
                 className="w-full h-auto object-cover"
               />
