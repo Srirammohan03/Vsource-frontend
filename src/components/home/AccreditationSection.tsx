@@ -31,7 +31,7 @@ const Accreditation = memo(() => {
             >
               <h2 className="section-title">ACCREDITATION</h2>
               <motion.img
-                src="https://icef-api-production.s3.eu-central-1.amazonaws.com/ias_material/0016M00002d5M0sQAE_badge.png"
+                src="/assets/images/icef.webp"
                 alt="ICEF Accreditation"
                 loading="lazy"
                 whileHover={{ scale: 1.05 }}
@@ -74,7 +74,7 @@ const Accreditation = memo(() => {
                   className="accreditation-img"
                 />
                 <motion.img
-                  src="/assets/images/nafsa.jpeg"
+                  src="/assets/images/nafsa.jpg"
                   alt="NAFSA Membership"
                   loading="lazy"
                   whileHover={{ scale: 1.05 }}
@@ -97,7 +97,7 @@ const Accreditation = memo(() => {
             >
               <h2 className="section-title">ACCREDITATION</h2>
               <img
-                src="https://icef-api-production.s3.eu-central-1.amazonaws.com/ias_material/0016M00002d5M0sQAE_badge.png"
+                src="/assets/images/icef.webp"
                 alt="ICEF Accreditation"
                 loading="lazy"
                 className="accreditation-img"
@@ -134,7 +134,7 @@ const Accreditation = memo(() => {
                   className="accreditation-img"
                 />
                 <img
-                  src="/assets/images/nafsa.jpeg"
+                  src="/assets/images/nafsa.jpg"
                   alt="NAFSA Membership"
                   loading="lazy"
                   className="accreditation-img"
