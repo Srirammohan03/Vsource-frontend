@@ -9,35 +9,35 @@ type VideoItem = {
 const videos: VideoItem[] = [
   {
     name: "SAMSRUTHI",
-    video: "/assets/images/video/student1.mp4",
-  },
-  {
-    name: "AMITH REDDY",
-    video: "/assets/images/video/student2.mp4",
-  },
-  {
-    name: "BEDRE VISHWAS",
-    video: "/assets/images/video/student3.mp4",
-  },
-  {
-    name: "DEEKSHITHA",
     video: "/assets/images/video/student4.mp4",
   },
   {
-    name: "SHAIK MUNEER AHMED",
-    video: "/assets/images/video/student5.mp4",
+    name: "AMITH REDDY",
+    video: "/assets/images/video/student8.mp4",
   },
   {
-    name: "KHASHIKA",
-    video: "/assets/images/video/student6.mp4",
-  },
-  {
-    name: "SATHVIKA",
+    name: "BEDRE VISHWAS",
     video: "/assets/images/video/student7.mp4",
   },
   {
+    name: "DEEKSHITHA",
+    video: "/assets/images/video/student1.mp4",
+  },
+  {
+    name: "SHAIK MUNEER AHMED",
+    video: "/assets/images/video/student6.mp4",
+  },
+  {
+    name: "KHASHIKA",
+    video: "/assets/images/video/student2.mp4",
+  },
+  {
+    name: "SATHVIKA",
+    video: "/assets/images/video/student5.mp4",
+  },
+  {
     name: "LOVLISH REDDY",
-    video: "/assets/images/video/student8.mp4",
+    video: "/assets/images/video/student3.mp4",
   },
 ];
 
