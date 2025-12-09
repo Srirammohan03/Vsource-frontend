@@ -609,12 +609,12 @@ const teamMembers = [
     bio: "VSOURCE FINTECH",
   },
   // JR
-  {
-    name: "Mr. RAKESH",
-    position: "Jr. ASSOCIATE",
-    image: img47,
-    bio: "VSOURCE OVERSEAS",
-  },
+  // {
+  //   name: "Mr. RAKESH",
+  //   position: "Jr. ASSOCIATE",
+  //   image: img47,
+  //   bio: "VSOURCE OVERSEAS",
+  // },
   {
     name: "Mr. SHAIK MUNEER",
     position: "Jr. ASSOCIATE",
@@ -645,12 +645,12 @@ const teamMembers = [
     image: img52,
     bio: "VSOURCE VARSITY",
   },
-  {
-    name: "Mr. VIJAY",
-    position: "Jr. ASSOCIATE",
-    image: img53,
-    bio: "VSOURCE OVERSEAS",
-  },
+  // {
+  //   name: "Mr. VIJAY",
+  //   position: "Jr. ASSOCIATE",
+  //   image: img53,
+  //   bio: "VSOURCE OVERSEAS",
+  // },
   {
     name: "Mr. SUBRAHMANYAM",
     position: "Jr. ASSOCIATE",
