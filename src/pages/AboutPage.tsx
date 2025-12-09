@@ -681,10 +681,10 @@ const teamMembers = [
     image: img58,
     bio: "VSOURCE OVERSEAS",
   },
-  {
-    name: "Mr. VAMSHI",
-    position: "DIGITAL MARKETING",
-    image: img59,
-    bio: "VSOURCE VARSITY",
-  },
+  // {
+  //   name: "Mr. VAMSHI",
+  //   position: "DIGITAL MARKETING",
+  //   image: img59,
+  //   bio: "VSOURCE VARSITY",
+  // },
 ];
