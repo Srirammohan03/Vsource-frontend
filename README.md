@@ -4,7 +4,7 @@ A modern, responsive website for VSource Education Consultancy built with React,
 
 ## Features
 
-- **Responsive Design**: Fully responsive across all device sizes
+- **Responsive Design** : Fully responsive across all device sizes
 - **Modern UI**: Clean and professional interface with smooth animations
 - **Interactive Elements**: Dynamic components like animated counters, testimonial sliders, and interactive forms
 - **SEO Optimized**: Structured for better search engine visibility
