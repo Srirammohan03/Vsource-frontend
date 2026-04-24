@@ -446,12 +446,7 @@ const teamMembers = [
     image: img19,
     bio: "VSOURCE COMPANY",
   },
-  {
-    name: "Mr. NARUN REDDY",
-    position: "HEAD, MARKETING",
-    image: img20,
-    bio: "VSOURCE VARSITY",
-  },
+
   {
     name: "Ms. NAVYA",
     position: "HEAD, MARKETING",
@@ -572,23 +567,12 @@ const teamMembers = [
     bio: "VSOURCE VARSITY",
   },
   {
-    name: "Mr. MAHESH PATIL",
-    position: "Sr. ASSOCIATE",
-    image: img40,
-    bio: "VSOURCE OVERSEAS",
-  },
-  {
     name: "Mr. BHANU SAI PRAKASH",
     position: "Sr. ASSOCIATE",
     image: img41,
     bio: "VSOURCE OVERSEAS",
   },
-  {
-    name: "Mr. RADHA KRISHNA",
-    position: "Sr. ASSOCIATE",
-    image: img42,
-    bio: "VSOURCE VARSITY",
-  },
+
   {
     name: "Mr. VENKAT",
     position: "Sr. ASSOCIATE",
@@ -639,12 +623,7 @@ const teamMembers = [
     image: img51,
     bio: "VSOURCE OVERSEAS",
   },
-  {
-    name: "Mr. BHANU SAIRAM",
-    position: "Jr. ASSOCIATE",
-    image: img52,
-    bio: "VSOURCE VARSITY",
-  },
+
   // {
   //   name: "Mr. VIJAY",
   //   position: "Jr. ASSOCIATE",
