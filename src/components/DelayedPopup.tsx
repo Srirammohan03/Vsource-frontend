@@ -108,7 +108,7 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
     try {
       const { status } = await axios.post(
         `https://backend.vsourceoverseas.com/api/enquires`,
-        payload
+        payload,
       );
       if (status === 200 || status === 201) {
         toast.success("Submitted successfully!");
@@ -174,7 +174,7 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
                 <p className=" font-medium">TOP UNIVERSITIES • LOW PACKAGES</p>
 
                 <p className="text-xl font-medium">
-                  APPLY NOW FOR JAN 2026 INTAKE
+                  APPLY NOW FOR SEP 2026 INTAKE
                 </p>
 
                 {/* Close button */}
