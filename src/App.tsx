@@ -29,13 +29,13 @@ const ContactPage = lazy(() => import("./pages/ContactPage"));
 const View360 = lazy(() => import("./components/View360"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const UniversityHomePage = lazy(
-  () => import("./pages/university-pages/UniversityHomePage")
+  () => import("./pages/university-pages/UniversityHomePage"),
 );
 const UniversityDetails = lazy(
-  () => import("./pages/university-pages/UniversityDetails")
+  () => import("./pages/university-pages/UniversityDetails"),
 );
 const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
-const ChatBot = lazy(() => import("@/services/ChatBot"));
+// const ChatBot = lazy(() => import("@/services/ChatBot"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -127,14 +127,14 @@ const App = () => {
           {!shouldHideLayout && <Footer />}
         </div>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           {!shouldHideLayout && (
             <ChatBot
               token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0Ijoid3d3LnZzb3VyY2VvdmVyc2Vhcy5jb20iLCJpZCI6IjY3NmZlMzQ3Yzk3NTFkMmFhNWNkZTQ5NyIsImFjY0lkIjoiNjZiZjVjNjUzNTIzZmIxNjhjYzBkZTFlIiwiaWF0IjoxNzU4ODAzNjQ0fQ.8q-5u03q7aBSWYp_PcMzZIMZgPxtfc2eH76oWzlx7rU"
               mobileNudge={48}
             />
           )}
-        </Suspense>
+        </Suspense> */}
 
         {/* Floating Buttons */}
         {!shouldHideLayout && (

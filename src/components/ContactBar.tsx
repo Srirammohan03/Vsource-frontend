@@ -4,7 +4,7 @@ import { resetPopupPreferences } from "../lib/Popups";
 import { FaWhatsapp } from "react-icons/fa";
 import DelayedPopup from "./DelayedPopup"; // adjust this path as needed
 import { PopupModal } from "react-calendly";
-import ChatBot from "@/services/ChatBot";
+// import ChatBot from "@/services/ChatBot";
 
 interface ContactBarProps {
   visible?: boolean;
@@ -97,7 +97,7 @@ const ContactBar: React.FC<ContactBarProps> = ({ visible = true }) => {
             </button>
 
             {/* WhatsApp */}
-            <ChatBot token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0Ijoid3d3LnZzb3VyY2VvdmVyc2Vhcy5jb20iLCJpZCI6IjY3NmZlMzQ3Yzk3NTFkMmFhNWNkZTQ5NyIsImFjY0lkIjoiNjZiZjVjNjUzNTIzZmIxNjhjYzBkZTFlIiwiaWF0IjoxNzU4ODAzNjQ0fQ.8q-5u03q7aBSWYp_PcMzZIMZgPxtfc2eH76oWzlx7rU" />
+            {/* <ChatBot token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0Ijoid3d3LnZzb3VyY2VvdmVyc2Vhcy5jb20iLCJpZCI6IjY3NmZlMzQ3Yzk3NTFkMmFhNWNkZTQ5NyIsImFjY0lkIjoiNjZiZjVjNjUzNTIzZmIxNjhjYzBkZTFlIiwiaWF0IjoxNzU4ODAzNjQ0fQ.8q-5u03q7aBSWYp_PcMzZIMZgPxtfc2eH76oWzlx7rU" /> */}
             <a
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"

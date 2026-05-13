@@ -24,7 +24,9 @@ const ScrollToTopButton: React.FC<Props> = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean>(
-    typeof window !== "undefined" ? window.innerWidth <= mobileBreakpoint : false
+    typeof window !== "undefined"
+      ? window.innerWidth <= mobileBreakpoint
+      : false,
   );
 
   useEffect(() => {
@@ -67,7 +69,7 @@ const ScrollToTopButton: React.FC<Props> = ({
     <>
       {isVisible && (
         <>
-          {showFormIcon && (
+          {/* {showFormIcon && (
             <button
               onClick={() => {
                 onFormIconClick?.();
@@ -86,7 +88,7 @@ const ScrollToTopButton: React.FC<Props> = ({
             >
               <FileText className="h-6 w-6" />
             </button>
-          )}
+          )} */}
 
           <button
             onClick={scrollToTop}
