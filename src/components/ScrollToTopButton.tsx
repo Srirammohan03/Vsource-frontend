@@ -69,15 +69,10 @@ const ScrollToTopButton: React.FC<Props> = ({
     <>
       {isVisible && (
         <>
-          {/* {showFormIcon && (
+          {showFormIcon && (
             <button
               onClick={() => {
                 onFormIconClick?.();
-                if (typeof window.VsourceOpenChat === "function") {
-                  window.VsourceOpenChat();
-                } else {
-                  window.dispatchEvent(new Event("vsource-open-chat"));
-                }
               }}
               aria-label="Open Form / Chat"
               className="sonar-button fixed z-50 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors flex items-center justify-center"
@@ -88,7 +83,7 @@ const ScrollToTopButton: React.FC<Props> = ({
             >
               <FileText className="h-6 w-6" />
             </button>
-          )} */}
+          )}
 
           <button
             onClick={scrollToTop}
