@@ -1,133 +1,107 @@
-// import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 
-// interface ChatBotProps {
-//   token: string;
-//   openOnLoad?: boolean;
-//   mobileNudge?: number;
-//   desktopNudge?: number;
-//   mobileBreakpoint?: number;
-//   widgetSelector?: string;
-// }
+interface ChatBotProps {
+  token: string;
+  mobileNudge?: number;
+  desktopNudge?: number;
+  mobileBreakpoint?: number;
+}
 
-// declare global {
-//   interface Window {
-//     Chatty?: any;
-//     VsourceOpenChat?: () => void;
-//     VsourceCloseChat?: () => void;
-//   }
-// }
+declare global {
+  interface Window {
+    Chatty?: any;
+  }
+}
 
-// const defaultSelectors = [
-//   "iframe[src*='gallabox']",
-//   "iframe[src*='chatty']",
-//   ".chatty-launcher",
-//   ".chatty-widget",
-//   ".gallabox-launcher",
-//   "[id^='chatty']",
-// ];
+const ChatBot: React.FC<ChatBotProps> = ({
+  token,
+  mobileNudge = 90,
+  desktopNudge = 20,
+  mobileBreakpoint = 768,
+}) => {
+  useEffect(() => {
+    if (!token) return;
 
-// const ChatBot: React.FC<ChatBotProps> = ({
-//   token,
-//   openOnLoad = false,
-//   mobileNudge = 60,
-//   desktopNudge = 10,
-//   mobileBreakpoint = 480,
-//   widgetSelector,
-// }) => {
-//   useEffect(() => {
-//     if (!token) return;
-//     if (!document.getElementById("gallabox-chatty")) {
-//       (function (w: any, d: Document, s: string, u: string, t: string) {
-//         w.Chatty = function (c: any) {
-//           (w.Chatty._ = w.Chatty._ || []).push(c);
-//         };
-//         w.Chatty._ = w.Chatty._ || [];
-//         w.Chatty.url = u;
-//         w.Chatty.hash = t;
+    // LOAD SCRIPT ONLY ONCE
+    if (!document.getElementById("gallabox-chatty")) {
+      (function (w: any, d: Document, s: string, u: string, t: string) {
+        w.Chatty = function (c: any) {
+          (w.Chatty._ = w.Chatty._ || []).push(c);
+        };
 
-//         const h = d.getElementsByTagName(s)[0];
-//         const j = d.createElement(s) as HTMLScriptElement;
+        w.Chatty._ = w.Chatty._ || [];
+        w.Chatty.url = u;
+        w.Chatty.hash = t;
 
-//         j.id = "gallabox-chatty";
-//         j.async = true;
-//         j.src =
-//           "https://widget.gallabox.com/chatty-widget.min.js?_=" + Math.random();
-//         h.parentNode?.insertBefore(j, h);
-//       })(window, document, "script", "https://widget.gallabox.com", token);
-//     }
-//     window.VsourceOpenChat = () => {
-//       window.Chatty?.({ open: true });
-//     };
+        const h = d.getElementsByTagName(s)[0];
 
-//     window.VsourceCloseChat = () => {
-//       window.Chatty?.({ open: false });
-//     };
-//     const handleClickOutside = (e: MouseEvent) => {
-//       const frames = document.querySelectorAll("iframe[src*='gallabox']");
-//       for (const frame of frames) {
-//         if (frame.contains(e.target as Node)) return; // ignore inside click
-//       }
-//       window.VsourceCloseChat?.();
-//     };
+        const j = d.createElement(s) as HTMLScriptElement;
 
-//     document.addEventListener("mousedown", handleClickOutside);
+        j.id = "gallabox-chatty";
+        j.async = true;
 
-//     const selectors = widgetSelector
-//       ? [widgetSelector, ...defaultSelectors]
-//       : defaultSelectors;
+        j.src =
+          "https://widget.gallabox.com/chatty-widget.min.js?_=" + Math.random();
 
-//     const applyStylesAndNudge = (el: HTMLElement, px: number) => {
-//       if (el.dataset.gbAdjusted === "1") return;
+        h.parentNode?.insertBefore(j, h);
+      })(window, document, "script", "https://widget.gallabox.com", token);
+    }
 
-//       el.style.transform = `translateY(-${px}px)`;
-//       el.style.zIndex = "9999";
-//       const isMobile = window.innerWidth <= mobileBreakpoint;
-//       if (isMobile) {
-//         el.style.height = "70vh";
-//         el.style.maxHeight = "70vh";
-//       }
+    const adjustWidget = () => {
+      const selectors = [
+        "iframe[src*='gallabox']",
+        ".chatty-widget",
+        ".chatty-launcher",
+        ".gallabox-launcher",
+        "[id^='chatty']",
+      ];
 
-//       el.dataset.gbAdjusted = "1";
-//     };
+      const isMobile = window.innerWidth <= mobileBreakpoint;
 
-//     const adjustOnce = () => {
-//       const isMobile = window.innerWidth <= mobileBreakpoint;
-//       const px = isMobile ? mobileNudge : desktopNudge;
+      const bottomSpacing = isMobile ? mobileNudge : desktopNudge;
 
-//       for (const sel of selectors) {
-//         const nodes = document.querySelectorAll(sel);
-//         if (!nodes.length) continue;
+      selectors.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((node) => {
+          const el = node as HTMLElement;
 
-//         const el = nodes[0] as HTMLElement;
-//         applyStylesAndNudge(el, px);
-//         return true;
-//       }
-//       return false;
-//     };
+          el.style.setProperty("bottom", `${bottomSpacing}px`, "important");
 
-//     let tries = 0;
-//     const interval = setInterval(() => {
-//       tries++;
-//       if (adjustOnce() || tries >= 15) clearInterval(interval);
-//     }, 400);
+          el.style.setProperty(
+            "right",
+            isMobile ? "14px" : "20px",
+            "important",
+          );
 
-//     window.addEventListener("resize", adjustOnce);
+          el.style.setProperty("z-index", "9999", "important");
 
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//       window.removeEventListener("resize", adjustOnce);
-//       clearInterval(interval);
-//     };
-//   }, [
-//     token,
-//     openOnLoad,
-//     mobileNudge,
-//     desktopNudge,
-//     mobileBreakpoint,
-//     widgetSelector,
-//   ]);
+          el.style.setProperty(
+            "max-height",
+            isMobile ? "75vh" : "85vh",
+            "important",
+          );
 
-//   return null;
-// };
+          el.style.setProperty("border-radius", "18px", "important");
 
-// export default ChatBot;
+          el.style.setProperty("overflow", "hidden", "important");
+        });
+      });
+    };
+
+    const interval = setInterval(() => {
+      adjustWidget();
+    }, 1000);
+
+    window.addEventListener("resize", adjustWidget);
+
+    setTimeout(adjustWidget, 2000);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", adjustWidget);
+    };
+  }, [token, mobileNudge, desktopNudge, mobileBreakpoint]);
+
+  return null;
+};
+
+export default ChatBot;

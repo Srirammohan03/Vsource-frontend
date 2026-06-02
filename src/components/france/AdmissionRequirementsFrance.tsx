@@ -1,6 +1,7 @@
 import { Admissions } from "@/types/StudyInPage";
 import React, { memo, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import DelayedPopup from "../DelayedPopup";
 
 /* tiny hook for a subtle scroll-in animation */
 function useInView<T extends HTMLElement>(threshold = 0.2) {
@@ -12,7 +13,7 @@ function useInView<T extends HTMLElement>(threshold = 0.2) {
     if (!el) return;
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => setInView(e.isIntersecting)),
-      { threshold }
+      { threshold },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -28,6 +29,7 @@ type Prop = {
 };
 
 function AdmissionRequirementsFrance({ admissions }: Prop) {
+  const [showPopup, setShowPopup] = useState(false);
   const { ref, inView } = useInView<HTMLDivElement>(0.25);
 
   return (
@@ -77,13 +79,13 @@ function AdmissionRequirementsFrance({ admissions }: Prop) {
           </p>
 
           <div className="mt-7">
-            <Link
-              to="/contact"
+            <button
+              onClick={() => setShowPopup(true)}
               className="inline-flex items-center justify-center rounded-[5px] px-6 py-3 text-white font-semibold shadow hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{ backgroundColor: ACCENT }}
             >
               Talk to our Expert
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -119,6 +121,13 @@ function AdmissionRequirementsFrance({ admissions }: Prop) {
           </div>
         </div>
       </div>
+         {showPopup && (
+        <DelayedPopup
+          onMinimize={() => {
+            setShowPopup(false);
+          }}
+        />
+      )}
     </section>
   );
 }

@@ -237,18 +237,19 @@ const Footer = () => {
             All rights reserved.
           </p>
           <div className="flex justify-center md:justify-end space-x-6 text-sm">
-            <a
-              href="https://vsourceadmissions.com/Privacy"
-              className="text-gray-400 hover:text-white transition-colors"
+            <Link
+              to="/privacy-policy"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               Privacy Policy
-            </a>
-            <a
-              href="https://vsourceadmissions.com/Terms"
-              className="text-gray-400 hover:text-white transition-colors"
+            </Link>
+
+            <Link
+              to="/terms-and-conditions"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
