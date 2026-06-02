@@ -289,16 +289,16 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
               {/* Footer */}
               <div className="bg-red-500 text-white  md:-mb-6 md:-mx-6 md:p-6 md:mt-3 -mb-3 -mx-3 mt-2 p-3 text-center relative rounded-b-2xl space-y-1">
                 <span className="text-xl font-medium ">
-                  100% LOAN ASSISTANCE FROM DIFFERENT GOVERNMENT AND PRIVATE
-                  BANKS FOR ACCOMMODATION AND COURSE FEES
+                  100% LOAN ASSISTANCE FROM DIFFERENT GOVERNMENT & PRIVATE BANKS
+                  FOR
                 </span>
-
-                <span className="text-xl font-medium    ">
-                  ACCOMMODATION SUPPORT IN ABROAD
+                <br />
+                <span className="text-xl font-medium">
+                  FULL COURSE FEES & ACCOMMODATION.
                 </span>
-
-                <span className="text-xl font-medium    ">
-                  COMPLETE GUIDANCE TILL VISA
+                <br />
+                <span className="text-xl font-medium">
+                  COMPLETE GUIDANCE TILL VISA.
                 </span>
               </div>
             </div>
