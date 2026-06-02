@@ -35,7 +35,7 @@ const Footer = () => {
                   alt: "YouTube",
                 },
                 {
-                  href: "https://in.linkedin.com/company/vsource-educational-consultants",
+                  href: "https://in.linkedin.com/company/vsource-company",
                   src: "/assets/images/icons/linked in.webp",
                   alt: "LinkedIn",
                 },
