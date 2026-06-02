@@ -31,14 +31,19 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
   }, [controls]);
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
       if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
         animateToIconAndClose();
       }
-    }
+    };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
   }, []);
 
   const animateToIconAndClose = async () => {
@@ -130,19 +135,25 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
     setSelectedOption(option);
     setShowDropdown(false);
   };
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
-        animateToIconAndClose();
-      }
-    }
+  // useEffect(() => {
+  //   function handleClickOutside(e: MouseEvent) {
+  //     if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+  //       animateToIconAndClose();
+  //     }
+  //   }
 
-    document.addEventListener("mousedown", handleClickOutside);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "";
     };
   }, []);
-
   return (
     <div className="fixed inset-0 z-[60]">
       {backdropVisible && (
@@ -156,10 +167,10 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
       )}
 
       {/* Centered Card that animates into the icon */}
-      <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center overflow-y-auto p-4 pointer-events-none">
         <motion.div
           ref={cardRef}
-          className="relative w-full max-w-md pointer-events-auto"
+          className="relative w-full max-w-md max-h-[90vh] overflow-y-auto pointer-events-auto"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={controls}
         >
@@ -168,7 +179,7 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
               {/* Header */}
               <div className="bg-red-500 text-white md:py-6 md:px-6 md:-mx-6 md:-mt-6 mb-6 py-3 px-3 -mx-3  -mt-3 text-center relative rounded-t-2xl space-y-1">
                 <h2 className="text-2xl font-bold tracking-wide">
-                  STUDY IN UK
+                  STUDY IN ABROAD
                 </h2>
 
                 <p className=" font-medium">TOP UNIVERSITIES • LOW PACKAGES</p>
@@ -180,7 +191,7 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
                 {/* Close button */}
                 <button
                   onClick={animateToIconAndClose}
-                  className="absolute top-4 right-4 text-white hover:text-gray-100 transition"
+                  className="absolute top-4 right-4 text-white hover:text-gray-100 transition hover:rotate-180 transition duration-300 rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                   aria-label="Close"
                 >
                   <svg

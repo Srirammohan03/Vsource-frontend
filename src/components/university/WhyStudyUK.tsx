@@ -79,16 +79,7 @@ function WhyStudyUK({ whyStudyin }: Prop) {
               ))}
           </ul>
 
-          {/* CTA */}
-          <div className="mt-8">
-            <Link
-              to="/apply"
-              className="inline-flex items-center justify-center rounded-md px-5 py-3 text-white font-semibold shadow transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2"
-              style={{ backgroundColor: "#e40000" }}
-            >
-              Get a Free Profile Evaluation
-            </Link>
-          </div>
+      
         </div>
 
         {/* Right: Feature cards (each slides from LEFT with stagger) */}

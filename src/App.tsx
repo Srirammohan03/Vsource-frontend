@@ -15,6 +15,9 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import DelayedPopup from "@/components/DelayedPopup";
 import ScrollToTop from "./ScrollToTop";
 import AppSkeleton from "./AppSkeleton";
+import PrivacyPolicy from "./components/ireland/PrivacyPolicy";
+import TermsAndConditions from "./components/ireland/TermsAndConditions";
+import ChatBot from "./services/ChatBot";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -26,6 +29,7 @@ const StudyFrance = lazy(() => import("./pages/StudyFrance"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const JoinUsPage = lazy(() => import("./pages/JoinUsPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
+
 const View360 = lazy(() => import("./components/View360"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const UniversityHomePage = lazy(
@@ -101,6 +105,7 @@ const App = () => {
                 <Route path="/study-in-canada" element={<StudyCanada />} />
                 <Route path="/study-in-ireland" element={<StudyIreland />} />
                 <Route path="/study-in-france" element={<StudyFrance />} />
+
                 <Route
                   path="/explore-universities"
                   element={<UniversityHomePage />}
@@ -118,6 +123,11 @@ const App = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/maintenance" element={<MaintenancePage />} />
                 <Route path="/view-360" element={<View360 />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route
+                  path="/terms-and-conditions"
+                  element={<TermsAndConditions />}
+                />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
@@ -126,12 +136,13 @@ const App = () => {
           {!shouldHideLayout && <ContactBar />}
           {!shouldHideLayout && <Footer />}
         </div>
-
-        {/* <Suspense fallback={null}>
+{/* 
+        <Suspense fallback={null}>
           {!shouldHideLayout && (
             <ChatBot
               token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0Ijoid3d3LnZzb3VyY2VvdmVyc2Vhcy5jb20iLCJpZCI6IjY3NmZlMzQ3Yzk3NTFkMmFhNWNkZTQ5NyIsImFjY0lkIjoiNjZiZjVjNjUzNTIzZmIxNjhjYzBkZTFlIiwiaWF0IjoxNzU4ODAzNjQ0fQ.8q-5u03q7aBSWYp_PcMzZIMZgPxtfc2eH76oWzlx7rU"
-              mobileNudge={48}
+              mobileNudge={80}
+              desktopNudge={20}
             />
           )}
         </Suspense> */}

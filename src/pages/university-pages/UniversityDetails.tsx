@@ -86,7 +86,7 @@ const UniversityDetails: React.FC = () => {
       {
         threshold: 0.4,
         rootMargin: "-100px 0px -40% 0px",
-      }
+      },
     );
 
     Object.values(sectionRefs).forEach((ref) => {
@@ -119,13 +119,13 @@ const UniversityDetails: React.FC = () => {
   const courses = university?.courses || [];
   const coursesPerPage = 4;
   const totalSlides = Math.ceil(
-    (university?.courses?.famous_courses?.length || 0) / coursesPerPage
+    (university?.courses?.famous_courses?.length || 0) / coursesPerPage,
   );
 
   const startIdx = currentSlide * coursesPerPage;
   const visibleCourses = university?.courses?.famous_courses?.slice(
     startIdx,
-    startIdx + coursesPerPage
+    startIdx + coursesPerPage,
   );
 
   const paddedCourses = [...(visibleCourses || [])];
@@ -527,13 +527,13 @@ const UniversityDetails: React.FC = () => {
             </div>
 
             {/* Tab Buttons */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <div className="flex gap-4 mb-8" data-aos="zoom-in">
                 <button className="px-6 py-2 bg-red-600 text-white border-red-600 rounded-full">
                   Masters
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Course Cards Carousel */}
             <div
@@ -555,7 +555,7 @@ const UniversityDetails: React.FC = () => {
                       university?.courses?.famous_courses
                         ?.slice(
                           slideIndex * coursesPerPage,
-                          (slideIndex + 1) * coursesPerPage
+                          (slideIndex + 1) * coursesPerPage,
                         )
                         ?.map((course, index) => (
                           // .map((course, index) => (
@@ -711,7 +711,7 @@ const UniversityDetails: React.FC = () => {
                             {row?.annual_expenses}
                           </td>
                         </tr>
-                      )
+                      ),
                     )}
                 </tbody>
               </table>
@@ -803,7 +803,7 @@ const UniversityDetails: React.FC = () => {
                           </button>
                         </div>
                       </div>
-                    )
+                    ),
                   )}
               </div>
 
@@ -830,7 +830,7 @@ const UniversityDetails: React.FC = () => {
                 <button
                   onClick={() =>
                     setCurrentScholarshipSlide((prev) =>
-                      Math.min(prev + 1, totalScholarships - 1)
+                      Math.min(prev + 1, totalScholarships - 1),
                     )
                   }
                   disabled={currentScholarshipSlide >= totalScholarships - 1}
@@ -875,27 +875,6 @@ const UniversityDetails: React.FC = () => {
               >
                 <RichText content={university?.admissions?.description} />
               </p>
-            </div>
-
-            {/* Tabs */}
-            <div
-              className="flex gap-4 mb-6"
-              data-aos="zoom-in"
-              data-aos-anchor-placement="top-bottom"
-            >
-              {["masters"].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setSelectedTab(tab as "masters")}
-                  className={`px-6 py-2 rounded-lg font-medium border transition-colors ${
-                    selectedTab === tab
-                      ? "bg-red-600 text-white border-red-600"
-                      : "bg-white text-red-600 border-red-600"
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
             </div>
 
             {/* Accordion */}
