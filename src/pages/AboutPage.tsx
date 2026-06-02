@@ -617,12 +617,12 @@ const teamMembers = [
     image: img50,
     bio: "VSOURCE OVERSEAS",
   },
-  {
-    name: "Mr. S PAVAN",
-    position: "Jr. ASSOCIATE",
-    image: img51,
-    bio: "VSOURCE OVERSEAS",
-  },
+  // {
+  //   name: "Mr. S PAVAN",
+  //   position: "Jr. ASSOCIATE",
+  //   image: img51,
+  //   bio: "VSOURCE OVERSEAS",
+  // },
 
   // {
   //   name: "Mr. VIJAY",
