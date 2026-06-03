@@ -10,7 +10,8 @@ const View360 = () => {
     { src: string; title: string; subtitle: string }
   > = {
     Dilsukhnagar: {
-      src: "https://www.google.com/maps/embed?pb=!4v1760515897382!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ052N21fY2c.!2m2!1d17.3692601595086!2d78.52138567492067!3f15.463848464555387!4f-3.5524557100136036!5f0.7820865974627469",
+      src: "https://www.google.com/maps/embed?pb=!4v1780488091614!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ052N21fWEE.!2m2!1d17.36926006782998!2d78.52138255445722!3f274.1829157395227!4f-10.557087791438164!5f0.7820865974627469",
+      //  "https://www.google.com/maps/embed?pb=!4v1780488091614!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ052N21fWEE.!2m2!1d17.36926006782998!2d78.52138255445722!3f274.1829157395227!4f-10.557087791438164!5f0.7820865974627469"
       title: "Dilsukhnagar Office",
       subtitle: "Location — Dilsukhnagar, Hyderabad",
     },
@@ -76,7 +77,7 @@ const View360 = () => {
                   <div className="bg-white p-6 rounded-xl shadow-md">
                     <div className="relative aspect-video overflow-hidden rounded-lg">
                       <iframe
-                        src="https://vsourceadmissions.com/360View/"
+                        src="https://orange-quetzal-814564.hostingersite.com"
                         title="All Offices Virtual Tour"
                         className="w-full h-full border-0 rounded-lg"
                         allow="accelerometer; gyroscope; fullscreen"
@@ -100,11 +101,11 @@ const View360 = () => {
               <AnimateOnScroll>
                 <div className="mt-10 max-w-4xl mx-auto">
                   <div className="bg-white p-6 rounded-xl shadow-md">
-                    <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <div className="relative aspect-video overflow-hidden rounded-2xl">
                       <iframe
                         src={locations[activeTab].src}
                         title={`${activeTab} 360° View`}
-                        className="w-full h-full border-0 rounded-lg"
+                        className="absolute inset-0 h-[calc(100%+13px)] w-full -bottom-[60px] border-0"
                         allow="accelerometer; gyroscope; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
                         allowFullScreen
                         loading="lazy"
