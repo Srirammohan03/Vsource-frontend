@@ -202,7 +202,7 @@ const Footer = () => {
             </div>
 
             {/* Karnataka */}
-            {/* <div>
+            <div>
               <h4 className="font-semibold mb-2 text-xl">KARNATAKA</h4>
               {[
                 {
@@ -216,7 +216,7 @@ const Footer = () => {
                   <p className="text-gray-400 text-sm">{branch.address}</p>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
 
