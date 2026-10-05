@@ -200,16 +200,22 @@ const Hero = () => {
               className="absolute top-[40px] left-[-10px] bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 max-w-[280px] text-left shadow-sm"
             >
               <p className="text-red-600 text-[16px] font-bold leading-tight uppercase tracking-wide">
-                GLOBAL
+                STUDY MASTERS IN
                 <br />
-                TOP
+                TOP UK
                 <br />
                 UNIVERSITIES
+                
+                
               </p>
-              <p className="text-[10px] text-orange-400 font-semibold mt-2 animate-blink">
+              <p className="text-red-600 text-[16px] font-bold leading-tight uppercase tracking-wide mt-3">
+                
+                FREE FLIGHT TICKET
+              </p>
+              {/* <p className="text-[10px] text-orange-400 font-semibold mt-2 animate-blink">
                 FALL-INTAKE 2025-2026
-              </p>
-              <div className="bg-white rounded-xl px-2 py-1 mt-3 flex justify-center gap-1 w-fit mx-auto">
+              </p> */}
+              {/* <div className="bg-white rounded-xl px-2 py-1 mt-3 flex justify-center gap-1 w-fit mx-auto">
                 {["fr", "us", "ie", "ca", "gb"].map((flag, idx) => (
                   <img
                     key={idx}
@@ -221,7 +227,7 @@ const Hero = () => {
                     fetchPriority={idx < 3 ? "high" : "low"}
                   />
                 ))}
-              </div>
+              </div> */}
 
               <motion.button
                 initial={{ opacity: 0, x: -40 }}

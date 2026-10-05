@@ -480,12 +480,12 @@ const teamMembers = [
     image: img25,
     bio: "Tirupati",
   },
-  {
-    name: "Mr. SRINADH YADAV",
-    position: "BRANCH MANAGER",
-    image: img26,
-    bio: "VIJAYAWADA",
-  },
+  // {
+  //   name: "Mr. SRINADH YADAV",
+  //   position: "BRANCH MANAGER",
+  //   image: img26,
+  //   bio: "VIJAYAWADA",
+  // },
   // {
   //   name: "Mr. KIRAN KUMAR",
   //   position: "BRANCH MANAGER",

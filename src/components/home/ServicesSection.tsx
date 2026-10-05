@@ -21,7 +21,7 @@ const services = [
   {
     title: "EDU LOAN",
     description:
-      "100% EDUCATION LOAN\nFOR BTECH IN NAAC A, A+, A++\nFOR MASTER IN US | UK | IRELAND | CANADA | FRANCE",
+      "100% EDUCATION LOAN\nFOR MASTER IN US | UK ",
     imageSrc: "/assets/images/badges/edu.webp",
     externalUrl: "https://www.vsourcefintech.com/",
     logoSrc: "/assets/images/badges/logo fintech.png",
@@ -74,7 +74,7 @@ const ServicesSection = () => {
 
               <div className="mt-3 flex gap-3 flex-wrap sm:flex-nowrap">
                 <a
-                  href="/assets/media/Brochure 16 pages _CTC.pdf"
+                  href="https://www.vsourcefintech.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs sm:text-sm bg-white text-black font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-md hover:bg-gray-200 transition text-center flex-1 sm:flex-none"
@@ -84,7 +84,7 @@ const ServicesSection = () => {
                 </a>
 
                 <a
-                  href="tel:+918142611119"
+                  href="tel:+919121711119"
                   className="text-xs sm:text-sm bg-red-600 text-white font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-md hover:bg-red-700 transition text-center flex-1 sm:flex-none"
                   onClick={(e) => e.stopPropagation()}
                 >
