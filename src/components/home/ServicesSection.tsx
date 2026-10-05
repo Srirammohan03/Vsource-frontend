@@ -67,7 +67,7 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-sm text-white whitespace-pre-line leading-snug">
+                <p className="text-xl sm:text-2xl font-bold text-white whitespace-pre-line leading-snug">
                   {service.description}
                 </p>
               </div>

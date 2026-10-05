@@ -181,7 +181,9 @@ const DelayedPopup: React.FC<DelayedPopupProps> = ({ onMinimize }) => {
                 <h2 className="text-2xl font-bold tracking-wide">
                   STUDY MASTERS IN UK
                 </h2>
-                <h4 text-xl font-bold tracking-wide>FREE FLIGHT TICKET</h4>
+                <h2 className="text-2xl font-bold tracking-wide">
+                  FREE FLIGHT TICKET
+                </h2>
                 <p className=" font-medium">TOP UNIVERSITIES • LOW PACKAGES</p>
 
                 <p className="text-xl font-medium">
